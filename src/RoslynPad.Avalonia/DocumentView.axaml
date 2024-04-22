@@ -103,77 +103,6 @@
                        Height="16"/>
             </Button>
             <Separator />
-            <Menu Background="Transparent"
-                  Name="RootMenu"
-                  IsEnabled="{Binding NuGet.IsEnabled}">
-                <MenuItem Name="RootNuGetMenu"
-                          IsSubMenuOpen="{Binding NuGet.IsPackagesMenuOpen}"
-                          ItemsSource="{Binding NuGet.Packages}"
-                          Header="{Binding NuGet, Mode=OneTime}"
-                          ToolTip.Tip="NuGet Packages">
-                    <MenuItem.Styles>
-                        <Style Selector="MenuItem Popup">
-                            <Setter Property="MaxHeight" Value="400" />
-                        </Style>
-                        <Style Selector="MenuItem > MenuItem">
-                            <Setter Property="Command"
-                                    Value="{Binding ElementName=RootMenu, Path=DataContext.NuGet.InstallPackageCommand, Mode=OneTime}" />
-                            <Setter Property="CommandParameter"
-                                    Value="{Binding}" />
-                        </Style>
-                    </MenuItem.Styles>
-                    <MenuItem.DataTemplates>
-                        <DataTemplate DataType="{x:Type ui:PackageData}">
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{Binding Id, Mode=OneTime}" />
-                                <TextBlock Text="{Binding Version, Mode=OneTime}" />
-                            </StackPanel>
-                        </DataTemplate>
-                        <DataTemplate DataType="{x:Type ui:NuGetDocumentViewModel}">
-                            <Grid>
-                                <Image Source="{StaticResource NuGet}"
-                                       Width="16"
-                                       Height="16" />
-                                <ProgressBar VerticalAlignment="Bottom"
-                                             Height="4"
-                                             MinWidth="0"
-                                             BorderThickness="0"
-                                             IsIndeterminate="{Binding IsSearching}"
-                                             IsVisible="{Binding IsSearching}" />
-                            </Grid>
-                        </DataTemplate>
-                    </MenuItem.DataTemplates>
-                </MenuItem>
-            </Menu>
-            <TextBox Name="NuGetSearch"
-                     IsEnabled="{Binding NuGet.IsEnabled}"
-                     BorderBrush="#eeeeee"
-                     Text="{Binding NuGet.SearchTerm}"
-                     Watermark="Search NuGet (Ctrl+T)"
-                     Width="200" />
-            <Decorator VerticalAlignment="Center">
-                <CheckBox IsChecked="{Binding NuGet.Prerelease}"
-                          ToolTip.Tip="Include prerelease packages"
-                          Content="Prerelease" />
-            </Decorator>
-            <ContentPresenter Content="{Binding NuGet}">
-                <ContentPresenter.ContentTemplate>
-                    <DataTemplate DataType="{x:Type ui:NuGetDocumentViewModel}">
-                        <Grid>
-                            <Image Source="{StaticResource NuGet}"
-                                   Width="16"
-                                   Height="16"/>
-                            <ProgressBar VerticalAlignment="Bottom"
-                                             Height="4"
-                                             MinWidth="0"
-                                             BorderThickness="0"
-                                             IsIndeterminate="{Binding IsRestoring}"
-                                             IsVisible="{Binding IsRestoring}" />
-                        </Grid>
-                    </DataTemplate>
-                </ContentPresenter.ContentTemplate>
-            </ContentPresenter>
-            <Separator />
             <Button ToolTip.Tip="Format Document (Ctrl+D)"
                     Command="{Binding FormatDocumentCommand, Mode=OneTime}">
                 <Image Source="{StaticResource FormatDocument}"
@@ -191,12 +120,6 @@
                 <Image Source="{StaticResource UncommentCode}"
                        Width="16"
                        Height="16" />
-            </Button>
-            <Button ToolTip.Tip="Rename Symbol (F2)"
-                    Command="{Binding RenameSymbolCommand, Mode=OneTime}" >
-                <Image Source="{StaticResource Rename}"
-                       Width="16"
-                       Height="16"/>
             </Button>
         </StackPanel>
 

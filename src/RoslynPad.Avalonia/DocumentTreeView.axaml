@@ -21,59 +21,6 @@
       <RowDefinition Height="32" />
     </Grid.RowDefinitions>
 
-    <Border BorderBrush="#ABADB3"
-            BorderThickness="1,1,1,0">
-      <Grid>
-        <Grid.ColumnDefinitions>
-          <ColumnDefinition />
-          <ColumnDefinition Width="22" />
-          <ColumnDefinition Width="22" />
-        </Grid.ColumnDefinitions>
-
-        <Grid>
-          <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition MaxWidth="22" />
-          </Grid.ColumnDefinitions>
-
-          <TextBox Name="SearchText"
-                   BorderThickness="0"
-                   Text="{Binding SearchText}"
-                    />
-          <TextBlock Text="Search documents (press Enter)"
-                     IsHitTestVisible="False"
-                     IsVisible="{Binding !CanClearSearch}"
-                     Foreground="DarkGray">
-          </TextBlock>
-          <Button Grid.Column="1"
-                  Classes="SearchButtonStyle"
-                  Command="{Binding ClearSearchCommand}"
-                  ToolTip.Tip="Clear search (Esc)"
-                  IsVisible="{Binding CanClearSearch}" >
-            <Image Source="{StaticResource Close}"
-                   Width="16"
-                   Height="16"/>
-          </Button>
-        </Grid>
-        <ToggleButton Grid.Column="1"
-                      Classes="SearchButtonStyle"
-                      IsChecked=  "{Binding SearchFileContents}"
-                      ToolTip.Tip="Search File Contents">
-          <Image Source="{StaticResource FileCollection}"
-                 Width="16"
-                 Height="16" />
-        </ToggleButton>
-        <ToggleButton Grid.Column="2"
-                      Classes="SearchButtonStyle"
-                      IsChecked="{Binding SearchUsingRegex}"
-                      ToolTip.Tip="Use Regular Expressions" >
-          <Image Source="{StaticResource RegularExpression}"
-                 Width="16"
-                 Height="16" />
-        </ToggleButton>
-      </Grid>
-    </Border>
-
     <TreeView Grid.Row="1"
               ItemsSource="{Binding DocumentRoot.Children}"
               Name="Tree">

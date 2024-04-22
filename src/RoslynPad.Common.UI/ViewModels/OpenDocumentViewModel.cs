@@ -180,11 +180,11 @@ public class OpenDocumentViewModel : NotificationObject
 
         _executionHostParameters = new ExecutionHostParameters(
             BuildPath,
-            _serviceProvider.GetRequiredService<NuGetViewModel>().ConfigPath,
-            roslynHost.DefaultImports,
-            roslynHost.DisabledDiagnostics,
-            WorkingDirectory,
-            SourceCodeKind);
+            nuGetConfigPath: _serviceProvider.GetRequiredService<NuGetViewModel>().ConfigPath,
+            imports: roslynHost.DefaultImports,
+            disabledDiagnostics: roslynHost.DisabledDiagnostics,
+            workingDirectory: WorkingDirectory,
+            sourceCodeKind: SourceCodeKind);
 
         _executionHost = new ExecutionHost(_executionHostParameters, roslynHost, _logger)
         {

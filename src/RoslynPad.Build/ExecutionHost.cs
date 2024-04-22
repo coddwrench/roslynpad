@@ -134,10 +134,10 @@ internal partial class ExecutionHost : IExecutionHost
         _ctsLock = new object();
         _lock = new SemaphoreSlim(1, 1);
 
-        _scriptInitSyntax = SyntaxFactory.ParseSyntaxTree(BuildCode.ScriptInit, roslynHost.ParseOptions.WithKind(SourceCodeKind.Script));
+        _scriptInitSyntax = SyntaxFactory.ParseSyntaxTree(BuildCodeConst.ScriptInit, roslynHost.ParseOptions.WithKind(SourceCodeKind.Script));
         var regularParseOptions = roslynHost.ParseOptions.WithKind(SourceCodeKind.Regular);
-        _moduleInitAttributeSyntax = SyntaxFactory.ParseSyntaxTree(BuildCode.ModuleInitAttribute, regularParseOptions);
-        _moduleInitSyntax = SyntaxFactory.ParseSyntaxTree(BuildCode.ModuleInit, regularParseOptions);
+        _moduleInitAttributeSyntax = SyntaxFactory.ParseSyntaxTree(BuildCodeConst.ModuleInitAttribute, regularParseOptions);
+        _moduleInitSyntax = SyntaxFactory.ParseSyntaxTree(BuildCodeConst.ModuleInit, regularParseOptions);
         _importsSyntax = SyntaxFactory.ParseSyntaxTree(GetGlobalUsings(), regularParseOptions);
 
         MetadataReferences = ImmutableArray<MetadataReference>.Empty;
@@ -491,7 +491,7 @@ internal partial class ExecutionHost : IExecutionHost
         if (lastMissingSemicolon != null)
         {
             var statement = (ExpressionStatementSyntax)lastMissingSemicolon.Statement;
-            members = members.Replace(lastMissingSemicolon, BuildCode.GetDumpCall(statement));
+            members = members.Replace(lastMissingSemicolon, BuildCodeConst.GetDumpCall(statement));
         }
 
         root = compilationUnit.WithMembers(members);

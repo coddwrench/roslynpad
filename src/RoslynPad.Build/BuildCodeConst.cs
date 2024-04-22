@@ -4,7 +4,7 @@ using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace RoslynPad.Build;
 
-internal static class BuildCode
+internal static class BuildCodeConst
 {
     public const string ScriptInit = "RoslynPad.Runtime.RuntimeInitializer.Initialize();";
 
