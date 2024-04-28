@@ -36,17 +36,17 @@ internal class PlatformsFactory : IPlatformsFactory
         foreach (var sdk in sdks)
         {
             var versionName = sdk.Name;
-            if (NuGetVersion.TryParse(versionName, out var version) && version.Major > 1)
+            if (NuGetVersion.TryParse(versionName, out var version) && version.Major > 5)
             {
-                var name = version.Major < 5 ? ".NET Core" : ".NET";
-                var tfm = version.Major < 5 ? $"netcoreapp{version.Major}.{version.Minor}" : $"net{version.Major}.{version.Minor}";
+                var name =".NET";
+                var tfm = $"net{version.Major}.{version.Minor}";
                 versions.Add((name, tfm, version));
             }
         }
 
         return versions
-             .GroupBy(c => c.version.Major)
-             .Select(c => c.MaxBy(i => i.version.Minor))
+             .GroupBy(c => c.tfm)
+             .Select(c => c.MaxBy(i => i.version))
              .OrderBy(c => c.version.IsPrerelease)
              .ThenByDescending(c => c.version)
              .Select(version => new ExecutionPlatform(version.name, version.tfm, version.version, Architecture.X64, isDotNet: true));
@@ -70,7 +70,11 @@ internal class PlatformsFactory : IPlatformsFactory
             dotnetExe = "dotnet";
         }
 
-        var sdkPath = _listSdks.Value.Select(i => i.Path).Distinct().First();
+        var sdkPath = _listSdks
+            .Value
+            .Select(i => i.Path)
+            .Distinct()
+            .First();
 
         if (sdkPath != null)
         {
