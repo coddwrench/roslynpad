@@ -191,7 +191,7 @@ public class OpenDocumentViewModel : NotificationObject
             Name = Document?.Name ?? "Untitled",
             DocumentId = DocumentId,
             Platform = Platform.NotNull(),
-            DotNetExecutable = _platformsFactory.DotNetExecutable
+            DotNetExecutable = _platformsFactory.DotNetExecutable()
         };
 
         _executionHost.Dumped += ExecutionHostOnDump;

@@ -1,6 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
     <ProjectReference Include="..\RoslynPad.Roslyn\RoslynPad.Roslyn.csproj" />
+    <ProjectReference Include="..\RoslynPad.Utils\RoslynPad.Utils.csproj" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Mono.Cecil" />

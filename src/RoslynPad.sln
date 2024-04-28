@@ -38,6 +38,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\global.json = ..\global.json
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoslynPad.Utils", "RoslynPad.Utils\RoslynPad.Utils.csproj", "{1BBB3E95-210D-4AF9-9BED-1CCD1EFC74B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -110,6 +112,14 @@ Global
 		{A00977C6-5C07-4B08-9524-FD4F9DE94BD7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A00977C6-5C07-4B08-9524-FD4F9DE94BD7}.Release|x64.ActiveCfg = Release|Any CPU
 		{A00977C6-5C07-4B08-9524-FD4F9DE94BD7}.Release|x64.Build.0 = Release|Any CPU
+		{1BBB3E95-210D-4AF9-9BED-1CCD1EFC74B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BBB3E95-210D-4AF9-9BED-1CCD1EFC74B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BBB3E95-210D-4AF9-9BED-1CCD1EFC74B5}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{1BBB3E95-210D-4AF9-9BED-1CCD1EFC74B5}.Debug|x64.Build.0 = Debug|Any CPU
+		{1BBB3E95-210D-4AF9-9BED-1CCD1EFC74B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BBB3E95-210D-4AF9-9BED-1CCD1EFC74B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BBB3E95-210D-4AF9-9BED-1CCD1EFC74B5}.Release|x64.ActiveCfg = Release|Any CPU
+		{1BBB3E95-210D-4AF9-9BED-1CCD1EFC74B5}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -123,6 +133,7 @@ Global
 		{8A9BFF57-9025-4BBC-B77C-C85937528210} = {09BCD791-CCF8-48DB-98E4-6B18105D2DDB}
 		{561DF8E8-68D0-41B0-8268-51213C466E1C} = {E219D424-5BAA-483A-BFE6-679BA2A3C9B0}
 		{A00977C6-5C07-4B08-9524-FD4F9DE94BD7} = {33A4C07C-3BBB-4BA5-8A4E-CC22883B8ED5}
+		{1BBB3E95-210D-4AF9-9BED-1CCD1EFC74B5} = {52BBDF63-C2F5-439C-AFD6-E7BAC5A868C8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6E595517-397C-4164-83BB-D80FC9B19D36}

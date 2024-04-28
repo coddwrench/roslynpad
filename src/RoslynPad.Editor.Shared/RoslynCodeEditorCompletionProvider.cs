@@ -7,7 +7,6 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Completion;
 using Microsoft.CodeAnalysis.Text;
 using RoslynPad.Roslyn;
-using RoslynPad.Roslyn.Completion;
 using RoslynPad.Roslyn.SignatureHelp;
 using RoslynPad.Roslyn.Snippets;
 
